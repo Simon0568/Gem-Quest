@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
         if (dirX > 0f) // moving right
         {
             state = MovementType.walk;
-            sprite.flipX = false;
+            sprite.flipX = true;
             anim.SetBool("MovementType", true);
             anim.SetBool("Defend",defend);
             if(Input.GetKeyDown(KeyCode.Mouse1)){
@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
         else if (dirX < 0f) // moving left
         {
             state = MovementType.walk;
-            sprite.flipX = true; // flips the character 180 degrees so he faces left when we're moving left
+            sprite.flipX = false; // flips the character 180 degrees so he faces left when we're moving left
             anim.SetBool("MovementType", true);
             anim.SetBool("Defend",defend);
             if(Input.GetKeyDown(KeyCode.Mouse1)){
