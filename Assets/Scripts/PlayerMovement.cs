@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     private BoxCollider2D coll;
     private SpriteRenderer sprite;
-    public bool defend=false;
 
     private float dirX = 0f;
     [SerializeField] private float moveSpeed=7f;
@@ -49,12 +48,6 @@ public class PlayerMovement : MonoBehaviour
             state = MovementType.walk;
             sprite.flipX = true;
             anim.SetBool("MovementType", true);
-            anim.SetBool("Defend",defend);
-            if(Input.GetKeyDown(KeyCode.Mouse1)){
-                defend=true;
-            } if(Input.GetKeyUp(KeyCode.Mouse1)){
-                defend=false;
-            }
             
         }
         else if (dirX < 0f) // moving left
@@ -62,25 +55,11 @@ public class PlayerMovement : MonoBehaviour
             state = MovementType.walk;
             sprite.flipX = false; // flips the character 180 degrees so he faces left when we're moving left
             anim.SetBool("MovementType", true);
-            anim.SetBool("Defend",defend);
-            if(Input.GetKeyDown(KeyCode.Mouse1)){
-                defend=true;
-            }
-            if(Input.GetKeyUp(KeyCode.Mouse1)){
-                defend=false;
-            }
         }
         else
         {
             state = MovementType.idle; // after this the idle animation starts playing
             anim.SetBool("MovementType", false);
-            anim.SetBool("Defend",defend);
-            if(Input.GetKeyDown(KeyCode.Mouse1)){
-                defend=true;
-            }
-            if(Input.GetKeyUp(KeyCode.Mouse1)){
-                defend=false;
-            }
         }
 
     }
