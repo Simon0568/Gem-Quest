@@ -6312,6 +6312,7 @@ GameObject:
   - component: {fileID: 483975705}
   - component: {fileID: 483975704}
   - component: {fileID: 483975707}
+  - component: {fileID: 483975708}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -6420,7 +6421,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.027010396, y: -0.021324277}
+  m_Offset: {x: -0.027010381, y: -0.021324262}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -6447,6 +6448,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 14
   jumpForce: 5
+  jumpableGround:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &483975707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6462,6 +6466,26 @@ MonoBehaviour:
   maxHealth: 100
   curHealth: 0
   healthBar: {fileID: 1260885452}
+--- !u!95 &483975708
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483975701}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ebdf39ff020573c428da535db60868bb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -6648,9 +6672,9 @@ GameObject:
   - component: {fileID: 767100719}
   - component: {fileID: 767100718}
   - component: {fileID: 767100720}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

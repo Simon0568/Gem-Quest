@@ -14,53 +14,62 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer sprite;
 
     private float dirX = 0f;
+
     [SerializeField] private float moveSpeed=7f;
     [SerializeField] private float jumpForce=14f;
 
-    private enum MovementType { idle, walk}
+    [SerializeField] private LayerMask jumpableGround;
+
+    private enum MovementState {idle, walk, jump}
     // Start is called before the first frame update
     void Start()
     {
-        rb=GetComponent<Rigidbody2D>();
-        coll=GetComponent<BoxCollider2D>();
-        sprite=GetComponent<SpriteRenderer>();
-        anim=GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        coll = GetComponent<BoxCollider2D>();
+        sprite = GetComponent<SpriteRenderer>();
+        anim =  GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        dirX=Input.GetAxisRaw("Horizontal");
-        rb.velocity=new Vector2(dirX * moveSpeed, rb.velocity.y);
-        if(Input.GetButtonDown("Jump")){
-            rb.velocity=new Vector2(rb.velocity.x, jumpForce);
+        dirX = Input.GetAxisRaw("Horizontal");
+        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+
+
+        if(Input.GetButtonDown("Jump") && isGrounded()){
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
+
+
         UpdateAnimationState();
         }
 
    private void UpdateAnimationState()
     {
 
-        MovementType state;
+        MovementState state;
 
         if (dirX > 0f) // moving right
         {
-            state = MovementType.walk;
             sprite.flipX = true;
-            anim.SetBool("MovementType", true);
+            anim.SetBool("walking", true);
             
         }
         else if (dirX < 0f) // moving left
         {
-            state = MovementType.walk;
             sprite.flipX = false; // flips the character 180 degrees so he faces left when we're moving left
-            anim.SetBool("MovementType", true);
+            anim.SetBool("walking", true);
         }
         else
         {
-            state = MovementType.idle; // after this the idle animation starts playing
-            anim.SetBool("MovementType", false);
+            anim.SetBool("walking", false);
         }
-
     }
+
+    private bool isGrounded()
+        {
+            return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround); 
+        }   
+
 }
