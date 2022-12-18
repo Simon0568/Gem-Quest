@@ -176,7 +176,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 31.416945
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -236,10 +236,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56cf35a0f2e41e64882e6cec64542899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 5
-  height: 5
+  height: 25
+  width: 30
+  minStoneSpawn: 0
+  maxStoneSpawn: 15
   dirt: {fileID: 6826795620889863737, guid: 1ddc03795d8081840bc4cd55df7a5e9a, type: 3}
   dirtBottom: {fileID: 5951437081664460997, guid: ef8859859e56fc64585631c9c7fb864f, type: 3}
+  stone: {fileID: 8089768273326225473, guid: 12386a676e597234389797a2f6498656, type: 3}
 --- !u!4 &1239336385
 Transform:
   m_ObjectHideFlags: 0
@@ -248,7 +251,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1239336383}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 810.05884, y: 590.7369, z: -6.297279}
+  m_LocalPosition: {x: -6, y: -5.02, z: -6.297279}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
