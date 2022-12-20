@@ -200,8 +200,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 82716399}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 4.32, y: 4.08, z: -10}
+  m_LocalScale: {x: 50, y: 100, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -236,8 +236,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56cf35a0f2e41e64882e6cec64542899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  height: 25
-  width: 30
+  height: 70
+  width: 60
   minStoneSpawn: 0
   maxStoneSpawn: 15
   dirt: {fileID: 6826795620889863737, guid: 1ddc03795d8081840bc4cd55df7a5e9a, type: 3}

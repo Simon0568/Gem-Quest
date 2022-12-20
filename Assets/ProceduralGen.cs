@@ -32,8 +32,12 @@ public class ProceduralGen : MonoBehaviour
         }else{
             spawnObj(y,x,dirtBottom);
         }
+        if(totalStoneSpawn==height){
+            spawnObj(height,x,stone);
+        }else{
+            spawnObj(height,x,dirt);
+        }
     }
-       spawnObj(height,x,dirt);
     }
    }
 
