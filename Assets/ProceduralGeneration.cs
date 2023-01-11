@@ -20,12 +20,6 @@ public class ProceduralGeneration : MonoBehaviour
        Generation();
    }
 
-   void Update()
-   {
-        if(Input.GetKeyDown(KeyCode.Space)){
-            Generation();
-        }       
-   }
 
    void Generation(){
     seed=Random.Range(-10000,10000);
